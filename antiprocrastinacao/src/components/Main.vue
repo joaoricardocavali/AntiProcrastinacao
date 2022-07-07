@@ -2,8 +2,19 @@
 import { ref } from 'vue'
 
 const resultado = ref("")
+const resultadoGeral = ref("")
 const numeroSorteio = ref(0)
-const listaGeral = ref([])
+const listaGeral = ref([
+  "Nada",
+  "Tocar Guitarra", 
+  "Assistir Our Flag Means Death",
+  "Assistir Doctor Who",
+  "Assistir The Expanse",
+  "Jogar No Man's Sky",
+  "Jogar Grounded",
+  "Ler Duna",
+  "Ler A Torre Negra"
+])
 const listaGueiminho = ref([
   "Nada",
   "Golden Sun",
@@ -17,6 +28,11 @@ const gerar = () => {
   resultado.value = listaGueiminho.value[numeroSorteio.value]
 }
 
+const gerarGeral = () => {
+  numeroSorteio.value = Math.floor(Math.random()*8)+1
+  resultadoGeral.value = listaGeral.value[numeroSorteio.value]
+}
+
 defineProps({
   msg: String
 })
@@ -24,8 +40,14 @@ defineProps({
 
 <template>
   <div>
+    <h3>Games no ônibus:</h3>
     <p>{{resultado}}</p>
     <button @click="gerar()">Sortear</button>
+  </div>
+  <div>
+    <h3>Anti Procrastinação:</h3>
+    <p>{{resultadoGeral}}</p>
+    <button @click="gerarGeral()">Sortear</button>
   </div>
 </template>
 
