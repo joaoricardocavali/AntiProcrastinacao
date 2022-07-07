@@ -7,6 +7,13 @@ import Main from './components/Main.vue'
 <template>
   <img alt="Vue logo" src="../public/gb.jpg" width="300" />
   <Main />
+  <footer>
+    <br />
+    <br />
+    <br />
+    <br />
+    Desenvolvido por Joao Ricardo Cavali - Uso Pessoal
+  </footer>
 </template>
 
 <style>
