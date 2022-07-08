@@ -8,10 +8,12 @@ const listaGeral = ref([
   "Nada",
   "Tocar Guitarra", 
   "Assistir Our Flag Means Death",
+  "Assistir One Piece",
   "Assistir Doctor Who",
   "Assistir The Expanse",
   "Jogar No Man's Sky",
   "Jogar Grounded",
+  "Jogar The Witcher 3",
   "Ler Duna",
   "Ler A Torre Negra"
 ])
@@ -20,17 +22,18 @@ const listaGueiminho = ref([
   "Golden Sun",
   "DBZ - Legendary Super Warriors",
   "Harvest Moon 3",
-  "Harry Potter"
+  "Harry Potter e a Câmara Secreta ",
+  "Pokémon Unbound"
 ])
 
-const gerar = () => {
-  numeroSorteio.value = Math.floor(Math.random()*4)+1
-  resultado.value = listaGueiminho.value[numeroSorteio.value]
+const gerarGeral = () => {
+  numeroSorteio.value = Math.floor(Math.random()*10)+1
+  resultadoGeral.value = listaGeral.value[numeroSorteio.value]
 }
 
-const gerarGeral = () => {
-  numeroSorteio.value = Math.floor(Math.random()*8)+1
-  resultadoGeral.value = listaGeral.value[numeroSorteio.value]
+const gerar = () => {
+  numeroSorteio.value = Math.floor(Math.random()*5)+1
+  resultado.value = listaGueiminho.value[numeroSorteio.value]
 }
 
 defineProps({
